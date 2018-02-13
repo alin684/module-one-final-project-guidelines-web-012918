@@ -1,0 +1,5 @@
+words = [
+  ['test', 50],
+  ['me', 40],
+  ['tenderly', 30]
+]

@@ -1,0 +1,16 @@
+As a user, I want to be able to type in a song name and see its lyrics.
+
+As a user, I want to be able to see how many unique words there are in
+a particular song.
+
+As a user, I want to be able to find out a particular artist's top 5
+most commonly used words.
+
+As a user, I want to be able to find out the top 5 most commonly used
+words of the most popular songs (top 10) of a given genre.
+
+
+WORK FLOW
+user input --> chomp input --> RestClient get () call to API using input
+--> parse response --> plug relevant data into database --> use methods on data
+in database
