@@ -47,3 +47,87 @@ Projects need to be approved prior to launching into them, so take some time to 
       - Address, if anything, what you would change or add to what you have today?
       - Present any code you would like to highlight.   
 7. *OPTIONAL, BUT RECOMMENDED*: Write a blog post about the project and process.
+
+
+
+
+
+
+
+# Plan of Action
+
+  1. Set up connection to API
+    a) Refine data pull (what data, what API call specifically)
+    b) Formatting of data to fit within guidelines
+    c) Call to a second email
+  2. Pull in seed data for database
+  3. Plan and create methods to extract data
+  4. Create CLI to interface with user
+
+We pull in data from a music API to extract Artist data, we then seed our database with that data and run some methods on that data to answer fun and interesting questions.
+
+Pulling data from the API >> Selecting where that data will go in relation to the tables we have setup
+
+Artists  ---<< Songs    (Have many)
+Artists  >>-<< Genres   (Have many through)
+Genres   ---<< Songs    (Have many)
+Songs    --->> Lyrics   (Belong to)
+
+  Table Artists (artist_id, artist_title)
+  Table Genres (genre_id, genre_title)
+  Table Songs (song_id, song_title, genre_id)
+
+  #INVALID ABOVE MY DUYDE ^^
+
+  NEW BAZINGUH HERE
+/////////////////////////
+USERS ---<< SONGS >>--- ARTISTS
+          <lyrics>
+
+USER INPUT
+----------
+Ask user to create a profile
+  user's have a name and a list of songs they like/liked
+
+Ask user to search for a song's lyrics by song and artists
+  take the lyrics data and put it into a database?
+
+  take that data and put it into the user's personal instance?
+
+  and/or whenever the user uses a SAVE method we save the name of whatever the song was that they were searching for
+
+
+
+# API data, with multiple sources, getting results - so if a user calls in one song, we might have to sort through thousands of songs or so. Better to have more clarifying data aka ask them for a song, then ask them for a artist so that our API call can be even more accurate
+
+
+
+# Trouble areas, interacting with APIs
+# Creating CLI interface
+
+
+NEW GOALS
+
+We are modeling our CLI and API after Starwars API Iterations Project
+
+
+1.) Add new Favorites Model
+  Update relationships
+  Update DB tables
+
+2.) Move API pull requests to separate API file
+  Update GIT with new layout
+
+<!-- When the pull is successfull
+
+When user name is entered >> DB
+
+
+When song is entered
+When artists is entered
+These save to variable
+
+Interpolated into API pull request
+
+IF successfull API call - then we populate with song name and artist name and lyrics to their respective date tables
+ -->
