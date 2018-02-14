@@ -71,6 +71,7 @@ word_cloud_generator(filtered_word_hash)
 def top_10_most_used_words_in_song
   Hash[self.to_a[0,5]]
   # self = filtered_word_hash
+  # returns most used words and their counts
 end
 
 def num_unique_words_in_song
@@ -80,5 +81,5 @@ end
 
 def total_words_in_song
   self.values.inject { |a, b| a + b }
-  # self = filtered_word_hash
+  # self = filtered_word_hash (or word_hash?)
 end
