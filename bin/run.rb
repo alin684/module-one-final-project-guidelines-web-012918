@@ -36,7 +36,7 @@ def count_words(lyrics_string)
     end
   end
   # gets rid of commas in front of/behind words that gsub wasn't getting
-  words_without_commas.map { |word| word_list[word] += 1 }
+  words_without_commas.map {|word| word_list[word] += 1 }
   # puts words in word_list as key and increments by count
   sorted_count = word_list.sort_by {|word, count| count}.reverse
   # sorts word_list by count, puts in descending order,changes it into hash
@@ -68,12 +68,17 @@ word_hash = count_words(lyrics)
 filtered_word_hash = remove_stop_words(word_hash)
 word_cloud_generator(filtered_word_hash)
 
-# puts Hash[word_hash.to_a[0,5]]
-# # # returns top 5 most used words and their count
-#
-# num_unique_words = word_hash.length
-# # # counts number of hash keys = number of unique words
-#
-# puts num_unique_words
-#
-# word_hash.values.inject { |a, b| a + b }
+def top_10_most_used_words_in_song
+  Hash[self.to_a[0,5]]
+  # self = filtered_word_hash
+end
+
+def num_unique_words_in_song
+  self.length
+  # self = filtered_word_hash
+end
+
+def total_words_in_song
+  self.values.inject { |a, b| a + b }
+  # self = filtered_word_hash
+end
