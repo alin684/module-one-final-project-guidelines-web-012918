@@ -53,7 +53,6 @@ Projects need to be approved prior to launching into them, so take some time to 
 
 
 
-
 # Plan of Action
 
   1. Set up connection to API
@@ -105,6 +104,11 @@ Ask user to search for a song's lyrics by song and artists
 # Trouble areas, interacting with APIs
 # Creating CLI interface
 
+
+YO YO YO YO!
+BY THE WAY
+%20 = SPACE IN URL SPEAK 
+%27 = APOSTPRHE IN URL SPEAK
 
 NEW GOALS
 
