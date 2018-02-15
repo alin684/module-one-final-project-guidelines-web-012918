@@ -15,10 +15,14 @@ require 'launchy'
 artist_input = "big sean"
 url_artist_input = artist_input.downcase.gsub(/[^a-zA-Z\s.]/,"").gsub(".", "").gsub(" ", "%20")
 
-song_input = "dance ass"
+song_input = "qhR"
 url_song_input = song_input.downcase.gsub(/[^a-zA-Z\s.]/,"").gsub(".", "").gsub(" ", "%20")
 
 api_call_response = RestClient.get("https://orion.apiseeds.com/api/music/lyric/#{url_artist_input}/#{url_song_input}?apikey=HQFSeDG9ANwvtoJgF4rUgai2RlVw7JI6Q6nrjUGCk8JSLSpfJYYwNhkV3o0bFyor")
+binding.pry
+
+@local
+
 lyrics = JSON.parse(api_call_response)['result']['track']['text']
 artist_name = JSON.parse(api_call_response)['result']['artist']['name']
 track_name = JSON.parse(api_call_response)['result']['track']['name']
@@ -53,7 +57,7 @@ def remove_stop_words(word_hash_with_stop_words)
   # word_hash minus stop words
   sorted_minus_stop_words
 end
-
+binding.pry
 
 def word_cloud_generator(word_hash)
   magic_cloud_array_input = Hash[word_hash.to_a[0,100]].to_a
@@ -64,7 +68,6 @@ def word_cloud_generator(word_hash)
   Launchy.open("./magic_cloud.png")
 end
 
-word_hash = count_words(lyrics)
 filtered_word_hash = remove_stop_words(word_hash)
 word_cloud_generator(filtered_word_hash)
 
