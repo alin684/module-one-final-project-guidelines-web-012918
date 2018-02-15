@@ -23,12 +23,12 @@ ActiveRecord::Schema.define(version: 5) do
 
   create_table "lyrics", force: :cascade do |t|
     t.text "lyrics"
+    t.integer "song_id"
   end
 
   create_table "songs", force: :cascade do |t|
     t.string "name"
     t.integer "artist_id"
-    t.integer "lyric_id"
   end
 
   create_table "users", force: :cascade do |t|

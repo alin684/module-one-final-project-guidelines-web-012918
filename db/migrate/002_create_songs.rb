@@ -4,7 +4,7 @@ class CreateSongs < ActiveRecord::Migration[5.0]
     create_table :songs do |t|
       t.string  :name
       t.integer :artist_id
-      t.integer :lyric_id
+      # t.integer :lyric_id
     end
   end
 
